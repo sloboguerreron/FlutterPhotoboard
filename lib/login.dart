@@ -6,6 +6,7 @@ import 'package:ejemplo_construccion/widget/inputEmail.dart';
 import 'package:ejemplo_construccion/widget/password.dart';
 import 'package:ejemplo_construccion/widget/textLogin.dart';
 import 'package:ejemplo_construccion/widget/verticalText.dart';
+import 'package:localstorage/localstorage.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -14,6 +15,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

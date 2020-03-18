@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:localstorage/localstorage.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CallPage extends StatefulWidget{
   @override
   CallState createState() {
-    // TODO: implement createState
     return CallState();
   }
   
@@ -12,12 +12,13 @@ class CallPage extends StatefulWidget{
 }
 
 class CallState extends State<CallPage>{
+  final LocalStorage storage = new LocalStorage('clh');
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Scaffold(
       
-      body: Text('Soy una llamada'),
+      body: Text("Bienvenido "+storage.getItem("name")),
     );
   }
   

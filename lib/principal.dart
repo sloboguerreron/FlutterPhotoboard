@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 
 
+
 class PrincipalPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -23,6 +24,7 @@ class PrincipalPage extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
@@ -32,6 +34,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
+      
   int _counter = 0;
   int _currentPage = 0;
   
