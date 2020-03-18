@@ -1,5 +1,5 @@
-import 'package:ejemplo_construccion/pages/calls.dart';
-import 'package:ejemplo_construccion/pages/chats.dart';
+import 'package:ejemplo_construccion/pages/Calendar.dart';
+import 'package:ejemplo_construccion/pages/camera.dart';
 import 'package:flutter/material.dart';
 
 
@@ -71,15 +71,20 @@ class _MyHomePageState extends State<MyHomePage>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: <Widget>[CallPage(), ChatPage()],
+        children: <Widget>[CameraPage(), CalendarPage()],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => CameraPage()
+              )
+            );
+          },
         tooltip: 'Increment',
         child: Icon(Icons.camera, color: Colors.white),
        
-      ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
