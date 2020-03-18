@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ejemplo_construccion/dummies/chats.dart';
 
-class ChatPage extends StatefulWidget {
+class MateriasPage extends StatefulWidget {
   @override
-  ChatState createState() {
+  MateriasState createState() {
     // TODO: implement createState
-    return ChatState();
+    return MateriasState();
   }
 }
 
-class ChatState extends State<ChatPage> {
+class MateriasState extends State<MateriasPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
