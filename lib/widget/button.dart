@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ejemplo_construccion/principal.dart';
-import 'package:localstorage/localstorage.dart';
 
 class ButtonLogin extends StatefulWidget {
   @override
@@ -8,7 +7,6 @@ class ButtonLogin extends StatefulWidget {
 }
 
 class _ButtonLoginState extends State<ButtonLogin> {
-  final LocalStorage storage = new LocalStorage('clh');
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,7 +32,6 @@ class _ButtonLoginState extends State<ButtonLogin> {
         ),
         child: FlatButton(
           onPressed: () {
-            storage.setItem("name", "Cammilo");
             Navigator.of(context).push(
               MaterialPageRoute<void>(
                 builder: (BuildContext context) => PrincipalPage()
