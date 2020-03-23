@@ -200,7 +200,6 @@ class _DayPeriodControl extends StatelessWidget {
         break;
       default:
         break;
-    
     }
     _togglePeriod();
   }
@@ -216,7 +215,7 @@ class _DayPeriodControl extends StatelessWidget {
         break;
       case TargetPlatform.iOS:
         break;
-      default: 
+      default:
         break;
     }
     _togglePeriod();
