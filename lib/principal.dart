@@ -1,9 +1,11 @@
 import 'package:ejemplo_construccion/pages/chats.dart';
 import 'package:flutter/material.dart';
 import 'package:ejemplo_construccion/dummies/chats.dart';
-import 'package:flutter_rounded_date_picker/rounded_picker.dart';
-import 'package:flutter_rounded_date_picker/src/material_rounded_date_picker_style.dart';
-import 'package:flutter_rounded_date_picker/src/material_rounded_year_picker_style.dart';
+
+import 'package:ejemplo_construccion/rounded_picker.dart';
+import 'package:ejemplo_construccion/src/material_rounded_date_picker_style.dart';
+import 'package:ejemplo_construccion/src/material_rounded_year_picker_style.dart';
+
 
 class PrincipalPage extends StatelessWidget {
   // This widget is the root of your application.
