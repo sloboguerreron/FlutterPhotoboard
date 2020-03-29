@@ -5,9 +5,12 @@ import 'package:ejemplo_construccion/delayed_animation.dart';
 import 'package:ejemplo_construccion/login.dart';
 
 
+
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([]);
+
   runApp(MaterialApp(
     title: "PhotoBoard",
     home: MyApp()

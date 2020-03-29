@@ -524,7 +524,7 @@ _TimePickerHeaderFormat _buildHeaderFormat(
   }) {
     final List<_TimePickerHeaderFragment> fragments = <_TimePickerHeaderFragment>[
       fragment1,
-      if (fragment2 != null) ...<_TimePickerHeaderFragment>[
+      if (fragment2 != null) ... <_TimePickerHeaderFragment>[
         fragment2,
         if (fragment3 != null) fragment3,
       ],

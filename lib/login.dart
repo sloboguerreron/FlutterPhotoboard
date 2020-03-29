@@ -9,6 +9,7 @@ import 'package:ejemplo_construccion/widget/verticalText.dart';
 
 
 class LoginPage extends StatefulWidget {
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
