@@ -1,9 +1,13 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:ejemplo_construccion/principal.dart';
 
 
 
 class ButtonLogin extends StatefulWidget {
+
+  final CameraDescription camera;
+  const ButtonLogin({Key key, @required this.camera}): super(key: key);
 
   @override
   _ButtonLoginState createState() => _ButtonLoginState();
@@ -37,7 +41,9 @@ class _ButtonLoginState extends State<ButtonLogin> {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (BuildContext context) => PrincipalPage()
+                builder: (BuildContext context) => PrincipalPage(
+                  camera: widget.camera,
+                )
               )
             );
           },

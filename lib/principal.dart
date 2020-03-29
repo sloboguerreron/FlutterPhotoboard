@@ -1,12 +1,17 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:ejemplo_construccion/dummies/chats.dart';
 
 import 'package:ejemplo_construccion/rounded_picker.dart';
 
+import 'package:ejemplo_construccion/camera.dart';
+
 
 
 class PrincipalPage extends StatelessWidget {
   
+  final CameraDescription camera;
+  const PrincipalPage({Key key, @required this.camera}): super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -18,15 +23,19 @@ class PrincipalPage extends StatelessWidget {
           primaryColor: Colors.blueGrey[900],
           primaryColorDark: Colors.blueGrey[900],
           accentColor: Colors.blueGrey[900]),
-      home: MyHomePage(title: 'PhotoBoard'),
+      home: MyHomePage(
+        title: 'PhotoBoard',
+        camera: this.camera, 
+        ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   
-  const MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title, this.camera}) : super(key: key);
   final String title;
+  final CameraDescription camera;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -121,10 +130,9 @@ class _MyHomePageState extends State<MyHomePage>
           Navigator.of(context).push(
             MaterialPageRoute<void>(
                 builder: (BuildContext context) =>
-                Text("Camera Page")
-                 /*TakePictureScreen(
+                 TakePictureScreen(
                   camera: widget.camera
-                )*/
+                )
               )
           );
         },

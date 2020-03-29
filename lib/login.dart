@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:ejemplo_construccion/widget/button.dart';
 import 'package:ejemplo_construccion/widget/first.dart';
@@ -9,6 +10,10 @@ import 'package:ejemplo_construccion/widget/verticalText.dart';
 
 
 class LoginPage extends StatefulWidget {
+
+  final CameraDescription camera;
+
+  const LoginPage({Key key, @required this.camera}): super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -36,7 +41,9 @@ class _LoginPageState extends State<LoginPage> {
                 ]),
                 InputEmail(),
                 PasswordInput(),
-                ButtonLogin(),
+                ButtonLogin(
+                  camera: widget.camera,
+                ),
                 FirstTime(),
               ],
             ),

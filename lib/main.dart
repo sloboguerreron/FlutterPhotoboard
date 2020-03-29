@@ -1,23 +1,38 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ejemplo_construccion/delayed_animation.dart';
 import 'package:ejemplo_construccion/login.dart';
 
+import 'package:camera/camera.dart';
+import 'package:flutter/material.dart';
+import 'package:path/path.dart' show join;
+import 'package:path_provider/path_provider.dart';
 
 
-
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([]);
 
+  final cameras = await availableCameras();
+  final firstCamera = cameras.first;
+
   runApp(MaterialApp(
     title: "PhotoBoard",
-    home: MyApp()
+    home: MyApp(
+      camera: firstCamera
+    )
   ));
 }
 
 class MyApp extends StatefulWidget {
+  final CameraDescription camera;
+
+  const MyApp({Key key, @required this.camera}): super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -161,7 +176,9 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (BuildContext context) => LoginPage()
+                builder: (BuildContext context) => LoginPage(
+                  camera: widget.camera
+                )
               )
             );
           },
@@ -199,7 +216,9 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (BuildContext context) => LoginPage()
+                builder: (BuildContext context) => LoginPage(
+                  camera: widget.camera,
+                )
               )
             );
           },
