@@ -5,6 +5,7 @@ import 'package:ejemplo_construccion/dummies/chats.dart';
 import 'package:ejemplo_construccion/rounded_picker.dart';
 
 import 'package:ejemplo_construccion/camera.dart';
+import 'package:ejemplo_construccion/gallery.dart';
 
 
 
@@ -101,6 +102,30 @@ class _MyHomePageState extends State<MyHomePage>
                         if (newDateTime != null) {
                           setState(() => dateTime = newDateTime);
                         }
+                      },
+                    ),
+                    ),
+                  ])),
+              SizedBox(height: 50),
+              Expanded(
+                  child: ListView(
+                      padding: const EdgeInsets.only(bottom: 50),
+                      children: <Widget>[
+                    Ink(
+                      decoration: const ShapeDecoration(
+                        color: Colors.blueGrey,
+                        shape: CircleBorder(),
+                      ),
+                      child: IconButton(
+                      icon: Icon(Icons.insert_drive_file),
+                      tooltip: "Subir Archivo",
+                      color: Colors.white,
+                      onPressed: () {
+                         Navigator.of(context).push(
+                         MaterialPageRoute<void>(
+                            builder: (BuildContext context) => Gallery()
+                          )
+                        );
                       },
                     ),
                     ),
